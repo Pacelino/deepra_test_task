@@ -17,8 +17,8 @@ templates = Jinja2Templates(directory="templates")
 @app.get("/", response_class=HTMLResponse)
 async def root(
     request: Request,
-    name: str | None = "Пользователь",
-    message: str | None = "Передай мне параметры в URL"
+    name: str = "Пользователь",
+    message: str = "Передай мне параметры в URL"
 ):
     return templates.TemplateResponse(
         request=request,
