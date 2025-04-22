@@ -1,4 +1,5 @@
-FROM ubuntu:latest
-LABEL authors="danilkushnerov"
-
-ENTRYPOINT ["top", "-b"]
+FROM python:alpine
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["python", "main.py"]
